@@ -1,0 +1,36 @@
+input{
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    font-family: serif;
+}
+
+.h2_title{
+    text-align: center;
+    font-family: serif;
+    font-size: 50px;
+}
+
+legend{
+    font-size: 30px;
+    font-family: serif;
+    text-align: center;
+}
+
+label{
+    font-size: 17px;
+    font-family: serif;
+}
