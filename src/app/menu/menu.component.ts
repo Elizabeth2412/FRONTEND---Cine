@@ -12,6 +12,5 @@ import { Router, RouterModule } from '@angular/router';
 export class MenuComponent {
   constructor(private router: Router) { }
 
- 
 }
 
