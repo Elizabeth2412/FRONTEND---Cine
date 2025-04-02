@@ -1,0 +1,52 @@
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h2 class="h2_title">Salas</h2>
+  </div>
+  
+  <form [formGroup]="form" (ngSubmit)="crearSala()" class="container w-50 p-4 shadow-lg rounded bg-light">
+      <legend class="mb-3 text-primary text-center">Información de Salas</legend>
+  
+      <div class="mb-3 d-flex flex-column">
+        <label for="disabledTextInput" class="form-label fw-semibold">Nombre de Sala</label>
+        <input formControlName="nombre" type="text" id="disabledTextInput" class="form-control form-control-sm" placeholder="Nombre de la sala">
+      </div>
+      
+      <div class="mb-3 d-flex flex-column" style="max-width: 400px;">
+        <label for="disabledSelect" class="form-label fw-semibold">Estado</label>
+        <select id="disabledSelect" class="form-select form-control-sm" formControlName="estado">
+          <option>Selecciona un estado</option>
+          <option value="A">Activo</option>
+          <option value="I">Inactivo</option>
+        </select>
+      </div>
+      
+      <div class="mt-3 d-flex justify-content-center gap-2">
+        <button type="button" class="btn btn-success btn-sm px-4" (click)="crearSala()">Crear</button>
+        <button type="button" class="btn btn-warning btn-sm px-4 text-white">Editar</button>
+      </div>
+  </form>
+  
+  <div class="mt-3 text-center">
+    <button type="button" class="btn btn-secondary btn-sm px-4" (click)="backInic()">Pantalla de Inicio</button>
+  </div>
+
+  <br><br>
+  <table class="table text-center">
+    <caption>Lista de Salas</caption>
+    <thead class="table-light">
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sala of salas; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ sala.nombre }}</td>
+        <td>{{ sala.estado === 'A' ? 'Activo' : (sala.estado === 'I' ? 'Inactivo' : 'Otro') }}</td>
+      </tr>
+    </tbody>
+  </table>  
+
+</div>

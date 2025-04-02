@@ -1,0 +1,32 @@
+<!-- <div>
+    <h1>Sala de cine</h1>
+    <br>
+    <h2>Iniciar Sesión</h2>
+
+    <form (ngSubmit)="login()">
+
+    <input type="text" placeholder="Usuario" required> 
+    <br/>
+    <input type="password" placeholder="Contraseña" required>
+    <br/>
+    <button type="submit" >Iniciar Sesión</button>
+  </form>
+  </div> -->
+
+  <div>
+    <h1>Sala de cine</h1>
+    <br>
+    <h2>Iniciar Sesión</h2>
+
+    <body background="https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2016/11/02181820/iStock_73045313_MEDIUM.jpg" bgcolor="FFCECB"></body>
+
+    <form (ngSubmit)="login()">
+      <input type="text" placeholder="Usuario" [(ngModel)]="username" name="username" required> 
+      <br/>
+      <input type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+      <br/>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+  </div>
+  
+  
