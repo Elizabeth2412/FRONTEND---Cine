@@ -20,4 +20,12 @@ export class SalaService {
   public obtener(): Observable<Sala[]> {
     return this.http.get<Sala[]>(this.URLbase);
   }
+
+  public editar(sala: Sala){
+    return this.http.put(this.URLbase, sala);
+  }
+  
+  public eliminar(id: number){
+    return this.http.delete(`${this.URLbase}/${id}`);
+  }
 }

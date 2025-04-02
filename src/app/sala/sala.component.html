@@ -38,6 +38,7 @@
         <th>Id</th>
         <th>Nombre</th>
         <th>Estado</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -45,6 +46,7 @@
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ sala.nombre }}</td>
         <td>{{ sala.estado === 'A' ? 'Activo' : (sala.estado === 'I' ? 'Inactivo' : 'Otro') }}</td>
+        <td><button (click)="editarSala()">Editar</button>, <button>Eliminar</button> </td>
       </tr>
     </tbody>
   </table>  

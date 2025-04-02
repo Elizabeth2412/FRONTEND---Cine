@@ -15,7 +15,6 @@ export class SalaComponent {
   private readonly formBuilder = inject(FormBuilder)
   salaService = inject(SalaService);
   salas: Sala[] = []
-  //routers = inject(Router);
 
   constructor(private router: Router) { }
 
@@ -32,13 +31,26 @@ export class SalaComponent {
     //console.log('Datos de la sala:', this.form.value);
     let sala = this.form.value as SalaCreacion;
     this.salaService.crear(sala).subscribe(()=>{
-      
+      this.listarSala();
+      window.location.reload();
     });
+  }
+
+  editarSala(){
+
+  }
+
+  eliminarSala(id: number){
+    this.salaService.eliminar(id).subscribe(()=>{
+      this.listarSala();
+      location.reload();
+    })
   }
 
   listarSala(){
     this.salaService.obtener().subscribe(data => {
-      this.salas = data; // Guardamos las salas en la variable
+      this.salas = data; 
+      console.log('Datos:', data);
     }, error => {
       console.error('Error al obtener salas', error);
     });
