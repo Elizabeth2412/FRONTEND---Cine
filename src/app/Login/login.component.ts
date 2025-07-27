@@ -2,16 +2,17 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-salacine',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 
-export class loginComponent {
+export class loginComponent implements AfterViewInit {
   username: string = '';
   password: string = '';
 
@@ -27,18 +28,24 @@ export class loginComponent {
     } else {
       alert('Usuario o contraseña incorrectos'); // Alerta en caso de error
     }
-  
-  // login() {
-  //   if (!this.username || !this.password) {  
-  //     alert('Por favor, completa todos los campos'); 
-  //     return; 
-  //   }
-  
-  //   if (this.username === 'admin' && this.password === '1234') { 
-  //     this.router.navigate(['/menu']); 
-  //   } else {
-  //     alert('Usuario o contraseña incorrectos');
-  //   }
+
   }
-  
+
+  register(){
+
+  }
+
+  ngAfterViewInit(): void {
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    if (signUpButton && container) {
+      signUpButton.addEventListener('click', () => container.classList.add("right-panel-active"));
+    }
+    if (signInButton && container) {
+      signInButton.addEventListener('click', () => container.classList.remove("right-panel-active"));
+    }
+  }
+
 }
